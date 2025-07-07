@@ -1,54 +1,73 @@
-# React + TypeScript + Vite
+# Управление IT-проектами - Devflow
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## О проекте
 
-Currently, two official plugins are available:
+Этот репозиторий содержит фронтенд часть системы для управления проектами, разработанного на React. Проект связан с [бэкенд репозиторием](https://github.com/ZIRex03/devflow-backend), где реализована серверная часть и API.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Важно**:
+1. Приложение использует локальную базу данных для разработки, поэтому приложение и его функции недоступны вдля просмотра. Функционал описан ниже в пункте скриншоты
+2. Проект находится в разработке, финальная версия приложения может отличаться.
+3. Проект раззработан в рамках выпускной квалификационной работы (ВКР).
 
-## Expanding the ESLint configuration
+## Основные функции
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+**Основные функции (для всех пользователей)**
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+* **Дашборд с аналитикой**
+* **Список проектов** с поиском и фильтрацией
+* **Канбан-доска задач**, разделенная по статусам (в планах/ в работе/ на проверке/ завершенные)
+* **Уведомления** (о назначении задач/проектов, исключение из задач/проектов)
+* **Профиль пользователя** (смена аватара и обложки)
+* **Авторизация**
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+**Менеджерские функции (для администратора)**
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+* **Добавление/редактирование проектов**
+* **Управление задачами** (создание, назначение участникам, редактирование)
+* **Управление участниками** (добавление/удаление из проекта)
+* **Генерация отчетов** (выбор проекта и периода -> предпросмотр PDF)
+* **Просмотр отчетов** (загрузка PDF с сервера)
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## Технологии
+
+* **Frontend:** React, Redux Toolkit, React Router, primereact
+* **Графика:** Chart.js
+* **Стили:** SCSS
+* **PDF-генерация:** jsPDF
+* **API:** Axios
+* **Сборка:** Vite
+
+## Скриншоты интерфейса
+
+1. **ДАШБОРД**
+
+**Дашборд менеджера:**
+![Дашборд админа](./screenshots/dashboard.png)
+![Просроченные проекты](./screenshots/dashboard-projects.png)
+**Дашборд пользователя:**
+![Дашборд пользователя](./screenshots/dashboard-user.png)
+
+3. **ПРОЕКТЫ**
+![Список проектов](./screenshots/projects.png)
+![Kanban-доска проекта](./screenshots/projects-kanban.png)
+![Информация о проекте](./screenshots/projects-info.png)
+![Информация о задаче](./screenshots/task-info.png)
+**Функции администрирования проекта:**
+![Добавление проекта](./screenshots/projects-add.png)
+![Редактирование проекта](./screenshots/projects-edit.png)
+![Участиники проекта](./screenshots/projects-users.png)
+![Добавление участников проекта](./screenshots/projects-users-add.png)
+![Добавление задачи](./screenshots/task-add.png)
+![Редактирование задачи](./screenshots/task-edit.png)
+![Назначение задачи участникам проекта](./screenshots/task-users-add.png)
+
+4. **ОТЧЕТЫ**
+![Страница отчетов](./screenshots/reports.png)
+![Просмотр отчетов](./screenshots/reports-view.png)
+![Генерация отчетов](./screenshots/reports-generate.png)
+
+5. **Уведомления**
+![Уведомления](./screenshots/notifications.png)
+
+6. **Авторизация**
+![Страница авторизации](./screenshots/login.png)
