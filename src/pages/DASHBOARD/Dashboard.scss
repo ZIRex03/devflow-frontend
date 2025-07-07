@@ -1,0 +1,22 @@
+
+.dashboard{
+
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    background-color: #EBECF1;
+    flex: 1;
+
+    &-title{
+        font-weight: 700;
+        font-size: 28px;
+    }
+}
+
+@media(max-width: 550px){
+
+    .dashboard{
+        padding: 10px;
+        padding-top: 60px;
+    }
+}

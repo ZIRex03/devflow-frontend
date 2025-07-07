@@ -1,0 +1,110 @@
+:root{
+    --loading-color: rgb(170, 170, 170);
+}
+
+.projectstasksloading{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+
+    &__header{
+        display: flex;
+        flex-direction: column;
+        row-gap: 15px;
+
+        &-title{
+            width: 250px;
+            height: 40px;
+            border-radius: 12px;
+            background-color: var(--loading-color);
+        }
+
+        &-desc{
+            width: 160px;
+            height: 15px;
+            background-color: var(--loading-color);
+            border-radius: 8px;
+        }
+    }
+
+    &__tabs{
+        margin-top: 25px;
+        display: flex;
+        column-gap: 25px;
+
+        &-page{
+            background-color: var(--loading-color);
+            border-radius: 8px;
+            width: 90px;
+            height: 25px;
+        }
+    }
+
+    &__kanban{
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        width: 100vw;
+        height: 100%;
+        background-color: #EBECF1;
+        margin-top: 40px;
+
+        &-header{
+            display: flex;
+            column-gap: 15px;
+            padding: 20px;
+
+            &-page{
+                width: 97px;
+                height: 32px;
+                border-radius: 22px;
+                background-color: var(--loading-color);
+            }
+        }
+
+        &-tasks{
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            column-gap: 40px;
+
+            &-column{
+                display: flex;
+                flex-direction: column;
+                row-gap: 25px;
+
+                &-header{
+                    width: 100%;
+                    height: 25px;
+                    border-radius: 12px;
+                    background-color: var(--loading-color);
+                }
+
+                &-task{
+                    width: 100%;
+                    height: 250px;
+                    background-color: var(--loading-color);
+                    border-radius: 8px;
+                }
+            }
+        }
+    }
+
+    
+}
+
+@keyframes shimmer {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+.projectstasksloading div {
+  animation: shimmer 1.5s infinite ease-in-out;
+}

@@ -1,0 +1,228 @@
+
+.taskinfowindow{
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #fff;
+    height: 100vh;
+    transition: .3s;
+    transform: translateX(100%);
+    padding: 30px;
+    width: 560px;
+    z-index: 950;
+    cursor: default;
+    pointer-events: auto;
+
+    &__header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &-title{
+            display: flex;
+            column-gap: 15px;
+            align-items: center;
+            cursor: pointer;
+            
+
+            &-icon{
+                width: 30px;
+                height: 30px;
+            }
+
+            &-text{
+                font-weight: 500;
+                font-size: 18px;
+                margin-top: -5px;
+            }
+        }
+
+        &-options{
+            display: flex;
+            align-items: center;
+            column-gap: 15px;
+
+            &-icon{
+                width: 20px;
+                cursor: pointer;
+
+                &.delete{
+                    color: red;
+                }
+            }
+        }
+    }
+
+    &__main{
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        height: 90%;
+        overflow: hidden;
+        overflow-y: auto;
+        padding-right: 10px;
+
+        &::-webkit-scrollbar{
+            width: 4px;
+        }
+
+        &::-webkit-scrollbar-thumb{
+            background-color: var(--subtext-300);
+        }
+
+        &-title{
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        &-desc{
+            margin-top: 15px;
+            line-height: 1.33;
+            color: var(--subtext-300);
+        }
+
+        &-created{
+            margin-top: 35px;
+            display: flex;
+            column-gap: 15px;
+            align-items: center;
+
+            &-text{
+                color: var(--subtext-300);
+            }
+
+            &-user{
+                display: flex;
+                align-items: center;
+                column-gap: 10px;
+
+                &-avatar{
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    overflow: hidden;
+
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+
+                &-name{
+                    font-weight: 500;
+                    line-height: 1.33;
+                }
+            }
+        }
+
+        &-assign{
+            margin-top: 35px;
+            display: flex;
+            column-gap: 15px;
+
+            &-text{
+                color: var(--subtext-300);
+                margin-top: 5px;
+            }
+
+            &-box{
+
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                flex-wrap: wrap;
+
+                &-user{
+                    display: flex;
+                    align-items: center;
+                    column-gap: 10px;
+
+                    &-avatar{
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 50%;
+                        overflow: hidden;
+
+                        img{
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+
+                    &-name{
+                        font-weight: 500;
+                        line-height: 1.33;
+                    }
+                }
+
+                &-add{
+                    width: 26px;
+                    height: 26px;
+                    border: 2px dashed var(--primary-blue);
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    padding: 6px;
+                    background-color: #ECEEFF;
+                    transition: .3s;
+                    cursor: pointer;
+
+                    .plus-icon{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        color: var(--primary-blue);
+                    }
+                }
+            }
+
+           
+        }
+
+        &-timeline{
+            margin-top: 35px;
+            display: flex;
+            align-items: center;
+            column-gap: 15px;
+
+            &-text{
+                color: var(--subtext-300);
+            }
+
+            &-date{
+                display: flex;
+                column-gap: 10px;
+
+                p{
+                    font-weight: 500;
+                }
+            }
+        }
+
+        &-image{
+            margin-top: 40px;
+            border-radius: 12px;
+            padding: 15px;
+            background-color: aquamarine;
+
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 8px;
+            }
+        }
+    }
+}
+
+.taskinfowindow.active{
+    transform: translateX(0%);
+}
+
+@media(max-width: 560px){
+    .taskinfowindow{
+        width: 100%;
+    }
+}

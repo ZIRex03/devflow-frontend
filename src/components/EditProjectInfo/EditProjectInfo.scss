@@ -1,0 +1,62 @@
+
+.projectedit{
+    position: absolute;
+    top: 0;
+    left: 30px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    transform: translateX(-100%);
+    background-color: rgb(214, 214, 214);
+    border-radius: 8px;
+    width: 300px;
+
+    &__options{
+        display: flex;
+        align-items: center;
+        column-gap: 15px;
+        padding: 10px 15px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: .3s;
+
+        &-icon{
+            min-width: 25px;
+            color: #363636;
+
+            &.delete{
+                color: red;
+            }
+        }
+
+        &-text{
+            color: #363636;
+            font-size: 18px;
+            font-weight: 500;
+            margin-top: -4px;
+
+            &.delete{
+                color: red;
+            }
+        }
+    }
+}
+
+@media(hover: hover){
+
+    .projectedit__options.edit:hover{
+        background-color: #a8a8a8;
+    }
+    .projectedit__options.delete:hover{
+        background-color: red;
+
+        .projectedit__options-icon {
+          color: #fff;
+        }
+        
+        .projectedit__options-text {
+          color: #fff;
+        }
+    }
+}

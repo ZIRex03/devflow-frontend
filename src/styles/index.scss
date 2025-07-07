@@ -1,0 +1,94 @@
+@use '@styles/mixins.scss';
+@use '@styles/reset.scss';
+
+@font-face {
+    font-family: 'Pangram';
+    src: url('../fonts/PPPangramSans-CompactRegular.otf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pangram';
+    src: url('../fonts/PPPangramSans-Medium.otf');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pangram';
+    src: url('../fonts/PPPangramSans-Bold.otf');
+    font-weight: 700;
+    font-style: normal;
+}
+
+*{
+    font-family: 'Pangram';
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-blue: #0D25FF;
+    --border-primary: #ebecf2;
+    --bg-light-blue: #f4f5fb;
+    --subtext: #333333;
+    --subtext-300: #5A5A5A;
+    --border-light: #e1e2ea;
+}
+
+.btn-blue{
+    color: #fff;
+    background-color: var(--primary-blue);
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 12px;
+}
+
+body{
+    height: 100%;
+}
+
+.aside-layout{
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    width: 100%;
+}
+
+.project{
+    display: flex;
+    flex: 1;
+    min-width: 0;
+}
+
+.burger-icon{
+    position: absolute;
+    top: 10px;
+    width: 35px;
+    left: 20px;
+    display: none;
+    z-index: 50;
+}
+
+.choose-project{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 30px;
+    text-align: center;
+    p{
+        font-size: 32px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+}
+
+@media(max-width: 550px){
+    .burger-icon{
+        display: inherit;
+    }
+
+    .choose-project{
+        display: none;
+    }
+}

@@ -1,0 +1,60 @@
+@use '@styles/mixins.scss' as *;
+
+.main{
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+
+    &__header{
+        padding: 20px 30px;
+
+        .logo-icon{
+            width: 160px;
+            height: 80px;
+        }
+    }
+
+    &__content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        row-gap: 15px;
+
+        &-text{
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+        }
+
+        &-description{
+            font-weight: 700;
+            @include fluid-text(36, 56);
+        }
+
+        &-subdescription{
+            @include fluid-text(18, 32);
+            font-weight: 500;
+        }
+
+        &-start{
+            @include fluid-text(16, 24);
+            padding: 15px 20px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: .3s all ease; 
+        }
+
+        &-preview{
+            margin-top: 30px;
+            margin-bottom: 40px;
+        }
+    }
+}
+
+@media (hover:hover){
+    .btn-blue:hover{
+        opacity: .4;
+    }
+}

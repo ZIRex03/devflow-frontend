@@ -1,0 +1,25 @@
+
+.dashboard__content-projects-chart{
+    margin-top: 20px;
+    box-shadow: 0 2px 11px 0 rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    background-color: #fff;
+    padding: 30px;
+
+    &-doughnut{
+        max-width: 100%;
+        max-height: 600px;
+        min-height: 500px;
+    }
+}
+
+@media(max-width:1000px){
+
+    .dashboard__content-projects-chart{
+
+        &-doughnut{
+            max-height: 300px;
+            min-height: 200px;
+        }
+    }
+}

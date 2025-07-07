@@ -1,0 +1,188 @@
+
+.projecttasks__header{
+
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20px;
+
+    &-project{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        &-title{
+            font-weight: 700;
+            font-size: 28px;
+        }
+    }
+
+    &-buttons{
+        display: flex;
+        column-gap: 12px;
+        align-items: center;
+        position: relative;
+
+        &-icons{
+            width: 32px;
+            cursor: pointer;
+            transition: .3s;
+
+            &.elipsis{
+                height: 24px;
+            }
+        }
+    }
+
+    &-type{
+        margin-top: 15px;
+        line-height: 1.33;
+        color: #5A5A5A;
+    }
+
+    &-tabs{
+
+        display: flex;
+        column-gap: 5px;
+        margin-top: 25px;
+        position: relative;
+
+        &-item{
+           position: relative;
+           
+            &:after{
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background-color: #3a86ff;
+                transition: width 0.3s ease-out;
+            }
+
+            &.active{
+                &::after{
+                    width: 100%;
+                }
+            }
+        }
+
+        &-name{
+            padding: 6px 12px 14px 12px;
+            line-height: 1.28;
+            color: #333333;
+            cursor: pointer;
+            transition: .3s;
+            
+        }
+    }
+
+    &-bottom{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &-team{
+            display: flex;
+            column-gap: 20px;
+            align-items: center;
+            border: 1px solid var(--border-primary);
+            border-radius: 21px;
+            padding: 4px;
+
+            &-box{
+                display: flex;
+                transition: .3s;
+                cursor: pointer;
+
+                & > :nth-child(2){
+                    margin-left: -12px;
+                }
+
+                & > :nth-child(3){
+                    margin-left: -12px;
+                }
+
+                & > :nth-child(4){
+                    margin-left: -12px;
+                }
+
+                .team-box-avatar{
+                    width: 34px;
+                    height: 34px;
+                    border-radius: 50%;
+                    background-color: var(--bg-light-blue);
+                    overflow: hidden;
+                    
+
+                    p{
+                        color: var(--primary-blue);
+                        font-weight: 500;
+                        margin-top: 2px;
+                        margin-left: 3px;
+                        font-size: 18px;
+                    }
+
+                    &-icon{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+
+            &-add{
+                width: 34px;
+                height: 34px;
+                border: 2px dashed var(--primary-blue);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                padding: 6px;
+                background-color: #ECEEFF;
+                transition: .3s;
+                cursor: pointer;
+
+                .plus-icon{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    color: var(--primary-blue);
+                }
+            }
+        }
+    }
+}
+
+@media(hover:hover){
+
+    .projecttasks__header-buttons-icons:hover{
+        opacity: .4;
+    }
+    .projecttasks__header-tabs-name:hover{
+        opacity: .5;
+    }
+    .projecttasks__header-bottom-team-add:hover{
+        background-color: #3a86ff;
+    }
+    .projecttasks__header-bottom-team-box:hover{
+        opacity: .4;
+    }
+}
+
+@media(max-width: 550px){
+    .projecttasks__header{
+        margin-top: 30px;
+    }
+}
+
+@media(max-width:630px){
+
+    .projecttasks__header-bottom{
+        margin-top: 30px;
+        display: flex;
+        justify-content: inherit;
+        align-items: baseline;
+        flex-direction: column-reverse;
+    }
+}

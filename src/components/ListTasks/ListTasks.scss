@@ -1,0 +1,317 @@
+.listtasks {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  margin-top: 30px;
+  overflow-y: auto;
+  height: 100%;
+  min-height: 0;
+  flex: 1;
+  padding-right: 15px;
+  
+
+  &__tasks {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    position: relative;
+  }
+
+  &::-webkit-scrollbar {
+    height: 4px;
+    width: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+  }
+
+  &__details {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+
+    &-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 15px;
+      border-bottom: 1px solid var(--border-light);
+      cursor: pointer;
+      background-color: #cdcdcd;
+      //   border-top-left-radius: 12px;
+      //   border-top-right-radius: 12px;
+      border-radius: 12px;
+
+      &-title {
+        display: flex;
+        column-gap: 10px;
+        align-items: center;
+
+        &-text {
+          font-weight: 500;
+          text-transform: uppercase;
+          display: flex;
+          align-items: center;
+          column-gap: 6px;
+
+          &.todo {
+            &::before {
+              background-color: #dc28fa;
+            }
+          }
+
+          &.progress {
+            &::before {
+              background-color: #f0bf11;
+            }
+          }
+
+          &.review {
+            &::before {
+              background-color: #ee681d;
+            }
+          }
+
+          &.completed {
+            &::before {
+              background-color: #34ce1b;
+            }
+          }
+
+          &::before {
+            content: "";
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            margin-top: 3px;
+          }
+        }
+
+        &-count {
+          width: 26px;
+          height: 26px;
+          aspect-ratio: 1/1;
+          border-radius: 50%;
+          background-color: #fff;
+          display: flex;
+          align-items: center;
+          font-weight: 500;
+          justify-content: center;
+          font-size: 16px;
+
+          p {
+            margin: 0;
+            padding: 0;
+          }
+        }
+      }
+
+      &-add {
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        background-color: #fff;
+        border-radius: 50%;
+        padding: 2px;
+        cursor: pointer;
+
+        &-icon {
+          color: var(--primary-blue);
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    &-main {
+      background-color: #fff;
+      padding: 20px 15px;
+      display: flex;
+      flex-direction: column;
+      //   border-bottom-left-radius: 12px;
+      //   border-bottom-right-radius: 12px;
+      border-radius: 12px;
+      border-bottom: 1px solid rgb(165, 165, 165);
+
+      &-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &-priority {
+          border-radius: 12px;
+          padding: 4px 10px;
+          text-align: center;
+          font-weight: 400;
+          font-size: 16px;
+
+          &.high {
+            background-color: rgb(252, 166, 166);
+          }
+
+          &.medium {
+            background-color: #f3cc7f;
+          }
+
+          &.low {
+            background-color: #bdf3b5;
+          }
+        }
+
+        &-info {
+          width: 22px;
+          cursor: pointer;
+        }
+      }
+
+      &-title {
+        margin-top: 10px;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 1.28;
+      }
+
+      &-image {
+        margin-top: 25px;
+        max-width: 500px;
+        max-height: 450px;
+        overflow: hidden;
+        padding: 10px;
+        border-radius: 12px;
+        background-color: #b6e7ae;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          width: auto;
+          height: auto;
+          border-radius: 12px;
+          object-fit: contain;
+        }
+      }
+
+      &-footer {
+        margin-top: 15px;
+        display: flex;
+        align-items: center;
+        column-gap: 40px;
+
+        &-options {
+          display: flex;
+          column-gap: 15px;
+          align-items: center;
+
+          &-message {
+            display: flex;
+            column-gap: 5px;
+            align-items: center;
+            cursor: pointer;
+
+            .message-icon {
+              width: 18px;
+            }
+
+            .message-count {
+              line-height: 1.33;
+              color: var(--subtext-300);
+              font-size: 18px;
+            }
+          }
+
+          &-files {
+            display: flex;
+            column-gap: 5px;
+            align-items: center;
+            cursor: pointer;
+            z-index: 10;
+
+            .files-icon {
+              width: 18px;
+            }
+
+            .files-count {
+              line-height: 1.33;
+              color: var(--subtext-300);
+              font-size: 18px;
+            }
+          }
+        }
+
+        &-assign {
+          display: flex;
+          column-gap: 20px;
+          align-items: center;
+
+          &-text{
+            color: var(--subtext-300);
+            line-height: 1.33;
+          }
+
+          &-count {
+            width: 28px;
+            height: 28px;
+            background-color: #fff;
+            border-radius: 50%;
+
+            p {
+              font-weight: 500;
+              font-size: 18px;
+              color: var(--primary-blue);
+              margin-left: 2px;
+            }
+          }
+
+          &-avatars {
+            display: flex;
+            align-items: center;
+
+            & > :nth-child(2) {
+              margin-left: -12px;
+            }
+            & > :nth-child(3) {
+              margin-left: -12px;
+            }
+            & > :nth-child(4) {
+              margin-left: -12px;
+            }
+
+            .avatars-box {
+              width: 28px;
+              height: 28px;
+              overflow: hidden;
+              border-radius: 50%;
+
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+            }
+          }
+
+          &-users {
+            display: flex;
+            column-gap: 5px;
+            font-size: 18px;
+            margin-top: -4px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.overlays_task{
+    background: rgba(56, 56, 60, 0.296);
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 900;
+    position: fixed;
+    cursor: default;
+}

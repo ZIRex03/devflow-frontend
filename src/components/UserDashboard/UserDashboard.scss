@@ -1,0 +1,177 @@
+
+.dashboard__content {
+  
+    &-alltask{
+
+        &-title{
+            font-weight: 600;
+            font-size: 20px;
+        }
+
+        &-box{
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            row-gap: 15px;
+
+            .task__box {
+              padding: 25px 10px;
+              background-color: #fff;
+              border-radius: 8px;
+              display: flex;
+              column-gap: 15px;
+              align-items: center;
+
+              .bulb-icon{
+                width: 25px;
+              }
+
+              &-info{
+                display: flex;
+                flex-direction: column;
+                row-gap: 5px;
+
+                &-title{
+                    font-size: 18px;
+                    font-weight: 500;
+                }
+
+                &-desc{
+                    display: flex;
+                    column-gap: 15px;
+                    align-items: center;
+
+                    &-mobile{
+                        display: none;
+                    }
+
+                    &-status{
+                        padding: 5px 10px;
+                        border-radius: 12px;
+
+                        &.todo{
+                            background-color: #DC28FA;
+                        }
+                        &.progress{
+                            background-color: #F0BF11;
+                        }
+                        &.review{
+                            background-color: #EE681D;
+                        }
+                        &.completed{
+                            background-color: #34CE1B;
+                        }
+                    }
+
+                    &-priority{
+                        padding: 5px 10px;
+                        border-radius: 12px;
+
+                        &.high{
+                            background-color: #FCA6A6;
+                        }
+                        &.medium{
+                            background-color: #f3cc7f;
+                        }
+                        &.low{
+                            background-color: #BDF3B5;
+                        }
+                    }
+                }
+              }
+            }
+        }
+    }
+
+    &-deadlinetask{
+
+        &-title{
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .deadline__box{
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 10px;
+            background-color: #fff;
+            border-radius: 8px;
+
+            &-main{
+                display: flex;
+                column-gap: 15px;
+
+                .timer-icon{
+                    width: 25px;
+                }
+
+                &-info{
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 10px;
+
+                    &-title{
+                        font-size: 18px;
+                        font-weight: 500;
+                    }
+
+                    &-desc{
+                        display: flex;
+                        column-gap: 10px;
+                        align-items: center;
+
+                    }
+                }
+            }
+
+            &-timer{
+                padding: 5px 10px;
+                display: flex;
+                column-gap: 10px;
+                font-size: 18px;
+                background-color: #EBF5EE;
+                border-radius: 8px;
+                font-weight: 500;
+                color: #5FB076;
+            }
+        }
+    }
+}
+
+.empty-task{
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+@media(max-width: 700px){
+
+    .task__box-info-desc{
+        display: none !important;
+
+        &-mobile{
+            display: flex !important;
+            flex-direction: column;
+            row-gap: 10px;
+
+            .flexbox {
+              display: flex;
+              column-gap: 15px;
+            }
+        }
+    }
+
+    .deadline__box{
+        display: flex;
+        flex-direction: column;
+        row-gap: 15px;
+        align-items: inherit !important;
+
+        &-timer{
+            width: fit-content;
+            margin-left: 35px;
+        }
+    }
+}
+

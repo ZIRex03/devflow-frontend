@@ -1,0 +1,119 @@
+
+.projectoverlay{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 900;
+    background-color: #fff;
+    padding: 20px 30px;
+    border-radius: 12px;
+    width: 600px;
+    height: 400px;
+    overflow: hidden;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+        width: 6px;
+        
+    }
+    &::-webkit-scrollbar-thumb {
+        background: #5d5d5d;
+        border-radius: 4px;
+    }
+
+    &-title{
+        font-weight: 700;
+        font-size: 22px;
+        text-align: center;
+    }
+
+    &__form{
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 25px;
+
+        &-inputgroup{
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+
+            label{
+                font-size: 18px;
+            }
+
+            input{
+                padding: 10px 15px;
+                border-radius: 8px;
+                border: 1px solid var(--border-light);
+                font-size: 18px;
+
+                &::placeholder{
+                    font-size: 18px;
+                }
+            }
+
+            textarea{
+                padding: 10px 15px;
+                border-radius: 8px;
+                border: 1px solid var(--border-light);
+                font-size: 18px;
+                width: 100%;
+                min-height: 100px;
+                max-height: 350px;
+                resize: vertical;
+
+                &::placeholder{
+                    font-size: 18px;
+                }
+            }
+        }
+
+        &-selectgroup{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            select{
+                border: 1px solid var(--border-light);
+                padding: 10px 15px;
+                border-radius: 12px;
+            }
+        }
+
+        &-actions{
+            margin-top: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            column-gap: 10px;
+            
+            &-button{
+                width: 50%;
+                padding: 10px 15px;
+                border-radius: 12px;
+                font-weight: 700;
+                text-transform: uppercase;
+                font-size: 18px;
+                transition: .3s;
+                
+
+                &.cancel{
+                    background-color: red;
+                    color: #fff;
+                }
+
+                &.accept{
+                    background-color: rgb(81, 130, 7);
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+@media (hover:hover){
+    .projectoverlay__form-actions-button:hover{
+        opacity: .4;
+    }
+}
